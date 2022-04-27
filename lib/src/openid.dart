@@ -341,7 +341,7 @@ enum FlowType {
 class Flow {
   final FlowType type;
 
-  final String? responseType;
+  String? responseType;
 
   final Client client;
 

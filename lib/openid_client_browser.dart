@@ -12,7 +12,7 @@ class Authenticator {
   Authenticator._(this.flow) : credential = _credentialFromUri(flow);
 
   Authenticator(Client client, {Iterable<String> scopes = const []})
-      : this._(Flow.implicit(client,
+      : this._(Flow.authorizationCode(client,
             state: window.localStorage['openid_client:state'])
           ..scopes.addAll(scopes)
           ..redirectUri = Uri.parse(window.location.href).removeFragment());

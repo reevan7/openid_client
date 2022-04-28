@@ -485,6 +485,8 @@ class Flow {
   }
 
   Future<Credential> callback(Map<String, String> response) async {
+    print(response);
+    print(response['state'])
     if (response['state'] != state) {
       throw ArgumentError('State does not match');
     }
